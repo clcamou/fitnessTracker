@@ -21,20 +21,3 @@ db.Workouts.creat({ name: "Ernest Hemingwat" })
     console.log(message);
 });
 
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/index.html"));
-});
-
-app.put("/api/workouts", (req, res) => {
-    db.User.find({})
-    .then(dbUser => {
-        res.json(dbUser);
-    })
-    .catch(err => {
-        res.json(err);
-    });
-});
-
-app.post("/api/workouts", ({body}, res) => {
-    db.Note.create(body)
-})
