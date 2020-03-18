@@ -1,5 +1,3 @@
-const db = require("../models");
-
 const router = require("express").Router();
 const workOut = require("../models/workOut.js");
 

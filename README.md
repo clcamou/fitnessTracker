@@ -7,6 +7,9 @@ Install node packages:
 
 ## Built With 
 1. Nodes:
+    1. Express
+    2. MongoDB 
+    3. Mongoose 
 2. Databases: 
     1. MongoDB 
     2. Mongoose

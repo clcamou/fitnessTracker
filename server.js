@@ -1,10 +1,7 @@
 const express = require("express");
-const logger = require("morgan");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3000;
-
-const db = require("./models");
 
 const app = express();
 
@@ -17,9 +14,9 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 //use the api routes created above
-app.use(require("./routes/apiRoutes"));
-app.use(require("./routes/htmlRoutes"));
+app.use(require("./Develop/routes/apiRoutes"));
+app.use(require("./Develop/routes/htmlRoutes"));
 
 app.listen(PORT, function() {
-    console.log("Now listending on port: ${Port}");
+    console.log("Now listending on port: 3000" );
 });
