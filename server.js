@@ -2,22 +2,24 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 const db = require("./models");
 
 const app = express();
 
-app.use(logger("dev"));
+//express code//
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/populatedb", { useNewUrlParser: true });
 
-db.Workouts.creat({ name: "Ernest Hemingwat" })
-.then(dbWorkout => {
-    console.log(dbWorkout);
-}).catch(({message})=> {
-    console.log(message);
+//connect to mongoose
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+
+//use the api routes created above
+app.use(require("./routes/apiRoutes"));
+app.use(require("./routes/htmlRoutes"));
+
+app.listen(PORT, function() {
+    console.log("Now listending on port: ${Port}");
 });
-
