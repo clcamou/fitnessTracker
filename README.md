@@ -3,6 +3,11 @@ This application allows the user to reach their goals quickers by allowing them 
 
 ## Getting Started 
 Install node packages: 
+1. npm install 
+   a. express 
+   b. mongoDB
+   c. mongoose
+   d. morgan 
 
 
 ## Built With 
@@ -10,6 +15,7 @@ Install node packages:
     1. Express
     2. MongoDB 
     3. Mongoose 
+    4. Morgan 
 2. Databases: 
     1. MongoDB 
     2. Mongoose

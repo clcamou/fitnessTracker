@@ -1,36 +1,34 @@
 const router = require("express").Router();
-const Excerise = require("../models/workout.js");
+const Workout = require("../models/workout");
 
-router.post("/api/excerise", ({ body }, res) => {
-    Excerise.create(body)
-      .then(dbExcerise => {
-        res.json(dbExcerise);
+router.post("/api/workout", ({ body }, res) => {
+    Workout.create(body)
+      .then(dbWorkout => {
+        res.json(dbWorkout);
       })
       .catch(err => {
         res.status(400).json(err);
       });
   });
   
-  router.post("/api/excerise/bulk", ({ body }, res) => {
-    Excerise.insertMany(body)
-      .then(dbExcerise => {
-        res.json(dbExcerise);
+  router.post("/api/workout/bulk", ({ body }, res) => {
+    Workout.insertMany(body)
+      .then(dbWorkout => {
+        res.json(dbWorkout);
       })
       .catch(err => {
         res.status(400).json(err);
       });
   });
   
-  router.get("/api/excerise", (req, res) => {
-    Excerise.find({})
+  router.get("/api/workout", (req, res) => { Workout.find({})
       .sort({ date: -1 })
-      .then(dbExcerise => {
-        res.json(dbExcerise);
+      .then(dbWorkout => {
+        res.json(dbWorkout);
       })
       .catch(err => {
         res.status(400).json(err);
       });
-  });
-  
-  module.exports = router;
-  
+    });
+
+    module.exports = router;
