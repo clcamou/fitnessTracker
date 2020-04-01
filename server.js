@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 //set up the port
 const PORT = process.env.PORT || 3000;
 
-const Excerise = require("./models/excerise.js");
+const Excerise = require("./models/workout.js");
 const app = express();
 
 app.use(logger("dev"));
