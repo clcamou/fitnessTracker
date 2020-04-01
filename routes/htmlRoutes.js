@@ -10,7 +10,7 @@ module.exports = function(app) {
         res.sendFile(path.join(_dirname, "../public/exercise.html"));
     });
 
-    app.get("states", function(req, res) {
+    app.get("stats", function(req, res) {
         res.semdFile(path.join(_dirname, "../public/stats.html"));
     });
 };
