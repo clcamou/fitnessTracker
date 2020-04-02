@@ -22,6 +22,8 @@ require("./routes/htmlRoutes.js")(app);
 //connect to mongoose
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
+mongoose.connect(MONGODB_URI);
+
 app.listen(PORT, function() {
     console.log("Now listending on port: 3000" );
 });
